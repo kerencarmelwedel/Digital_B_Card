@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'GreatVibes';
+    src: url('GreatVibes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: 
@@ -67,20 +75,22 @@ body::before {
     color: #2d3748;
 }
 
-.icon-wrapper {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-    color: white !important;
-    transition: transform 0.3s ease;
+.contact-item img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-.contact-item:hover .icon-wrapper {
-    transform: scale(1.1);
+/* Special handling for 30px icons */
+.contact-item img[src*="linkedin-30"],
+.contact-item img[src*="github-logo-30"] {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-item:hover img {
+    opacity: 1;
 }
 
 .btn-primary {
@@ -102,11 +112,20 @@ body::before {
     font-weight: 500;
 }
 
-h1 {
-    color: #1f2937;
-    font-weight: 600;
+.name-title {
+    font-family: 'GreatVibes', cursive !important;
+    color: #1f2937 !important;
+    font-weight: normal !important;
+    font-size: 3.2rem !important;
+    margin: 0 auto 1.5rem;
+    text-align: center !important;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: block;
 }
 
+/* Media Queries for Mobile */
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
@@ -119,5 +138,63 @@ h1 {
     
     .card {
         margin: 0 1rem;
+    }
+
+    .contact-item {
+        padding: 0.75rem !important;
+    }
+
+    .contact-item img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-item img[src*="linkedin-30"],
+    .contact-item img[src*="github-logo-30"] {
+        width: 22px;
+        height: 22px;
+    }
+
+    .contact-item p {
+        font-size: 0.95rem;
+    }
+
+    .name-title {
+        font-size: 2.8rem !important;
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .card {
+        margin: 0 0.5rem;
+    }
+
+    .contact-item {
+        padding: 0.5rem !important;
+    }
+
+    .contact-item img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .contact-item img[src*="linkedin-30"],
+    .contact-item img[src*="github-logo-30"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact-item p {
+        font-size: 0.9rem;
+    }
+
+    .name-title {
+        font-size: 2.4rem !important;
+        margin-bottom: 1rem;
     }
 }
