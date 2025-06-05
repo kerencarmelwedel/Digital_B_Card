@@ -1,2 +1,2 @@
 # Digital_B_Card
-A simple test for learning GitHub.
+just some html+css practice 
